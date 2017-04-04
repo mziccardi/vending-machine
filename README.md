@@ -1,5 +1,5 @@
 # Vending Machine Challenge
-mz
+
 
 ## Description
 For this challenge, you will be implementing Javascript code to represent an vending machine that accepts money and dispenses treats. While it may seem trivial, you will quickly find out all the nuances of the vending machine world.
