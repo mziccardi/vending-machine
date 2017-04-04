@@ -1,8 +1,12 @@
-export default class Person {
-  constructor() {
-    // each person starts out with 5 dollars!
-    this.state = {
-      credits = 500
-    }
+class Person {
+  constructor(initialCredits, creditSpent, currentCredit) {
+    this.initialCredits = 500,
+    this.creditSpent = 0,
+    this.currentCredit = this.initialCredits - this.creditSpent
+  }
+
+  insertCredit(amount){
+    this.initialCredits -  this.initialCredits - amount
+    return amount
   }
 }

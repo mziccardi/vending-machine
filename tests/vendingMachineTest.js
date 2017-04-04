@@ -6,7 +6,7 @@ const assert = require('chai').assert
 const VendingMachine = require('../vendingMachine').default
 const Person = require('../person').default
 
-describe('Elevator', function() {
+describe('vending-machine', function() {
   const vendingMachine = new VendingMachine()
   const alex = new Person("Alex", 100)
 
