@@ -8,21 +8,21 @@ const Person = require('../person').default
 
 describe('vending-machine', function() {
   const vendingMachine = new VendingMachine()
-  const alex = new Person("Alex", 100)
+  const alex = new Person()
 
-  afterEach(function() {
-    vendingMachine.reset();
-  });
+  // afterEach(function() {
+  //   vendingMachine.reset();
+  // });
 
-  xit('should bring a rider to a floor above their current floor', () => {
-    // Assert the current status of the vendingMachine is idle
+  it('remove credits from a persons wallet', () => {
+
     assert.equal(vendingMachine.status, 'idle')
 
     // Alex inserts a dollar into the vending machine
     vendingMachine.insertCredit(alex, 100)
 
     // Assert the current status of the vendingMachine is 'credited' after credits inserted
-    assert.equal(vendingMachine.status, 'credited')
+    // assert.equal(vendingMachine.status, 'credited')
     // Assert the total number of credits is 100 cents ($1.00) after credits inserted
     assert.equal(vendingMachine.credits, 100)
     // Assert the total number of change is 0 cents ($0.00) before selection is made
