@@ -14,7 +14,7 @@ describe('vending-machine', function() {
   //   vendingMachine.reset();
   // });
 
-  it('remove credits from a persons wallet', () => {
+  xit('remove credits from a persons wallet', () => {
 
     assert.equal(vendingMachine.status, 'idle')
 
@@ -22,11 +22,18 @@ describe('vending-machine', function() {
     vendingMachine.insertCredit(alex, 100)
 
     // Assert the current status of the vendingMachine is 'credited' after credits inserted
-    // assert.equal(vendingMachine.status, 'credited')
+    assert.equal(vendingMachine.status, 'credited')
     // Assert the total number of credits is 100 cents ($1.00) after credits inserted
     assert.equal(vendingMachine.credits, 100)
     // Assert the total number of change is 0 cents ($0.00) before selection is made
     assert.equal(vendingMachine.change, 0)
   });
+
+  xit('should check if credit amount is same as treat price of ',()=>{
+
+  })
+  it.only('logs my shit', ()=>{
+    vendingMachine.makeSelection()
+  })
 
 });
