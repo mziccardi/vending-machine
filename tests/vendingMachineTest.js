@@ -29,11 +29,15 @@ describe('vending-machine', function() {
     assert.equal(vendingMachine.change, 0)
   });
 
-  xit('should check if credit amount is same as treat price of ',()=>{
+  it.only('should let a person make a selection',()=>{
+    const vendingMachine = new VendingMachine()
+    const alex = new Person()
 
-  })
-  it.only('logs my shit', ()=>{
-    vendingMachine.makeSelection()
-  })
 
+    vendingMachine.insertCredit(alex, 100)
+    vendingMachine.makeSelection('a1')
+    
 });
+
+
+})

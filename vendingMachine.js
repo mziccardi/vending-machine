@@ -2,9 +2,9 @@ const Person = require('./person')
 const Treat = require('./treats')
 
 
+
 export default class VendingMachine {
   constructor(status, credits=0, change=0, selection,) {
-    // status can be ["idle", "credited", "vending"]
       this.status = 'idle' || 'credited' || 'vending'
       this.credits = 0
       this.change= 0
@@ -20,6 +20,8 @@ export default class VendingMachine {
       }
       this.selection = null
   }
+
+
   insertCredit(person, amount) {
     person.takeMoney(amount)
     this.credits += amount
@@ -28,29 +30,31 @@ export default class VendingMachine {
     }
   }
 
-  checkCredits(credits, selection){
-    // let { credits, selection, } = this
-    // this.insertCredit()
-    console.log(credits);
-    let prices = this.treats[selection][0].price
-    if(this.credits < selection ){
-      alert('you didnt put in enough credits')
-    }else{
-      //return snack here?
-    }
-  }
+  // checkCredits(credits, selection){
+  //   // let { credits, selection, } = this
+  //   // this.insertCredit()
+  //   console.log(credits);
+  //   let prices = this.treats[selection][0].price
+  //   if(this.credits < selection ){
+  //     alert('you didnt put in enough credits')
+  //   }else{
+  //     //return snack here?
+  //   }
+  // }
 
   makeSelection(selection) {
+    this.selection = selection
     let treatKeys = Object.keys(this.treats)
-    // console.log(this.credits);
-    if(treatKeys.includes(selection)){
-      this.selection = selection
-      this.credits = credits
-      // this.checkCredits(selection, credits)
+    let prices = this.treats[this.selection][0].price
+    console.log(prices)
+    if(this.credits < prices){
+      alert('not enough')
+    }
+    if(treatKeys.includes(this.selection)){
+      // make return candy function 
     }else{
       alert('make another choice')
     }
-
   }
 
 
