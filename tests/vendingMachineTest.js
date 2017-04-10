@@ -36,7 +36,7 @@ describe('vending-machine', function() {
 
     vendingMachine.insertCredit(alex, 100)
     vendingMachine.makeSelection('a1')
-    
+
 });
 
 

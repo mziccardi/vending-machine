@@ -21,7 +21,7 @@ export default class VendingMachine {
       this.selection = null
   }
 
-
+  // if I give a person and an amount, I expect this this and this to happen
   insertCredit(person, amount) {
     person.takeMoney(amount)
     this.credits += amount
@@ -46,14 +46,25 @@ export default class VendingMachine {
     this.selection = selection
     let treatKeys = Object.keys(this.treats)
     let prices = this.treats[this.selection][0].price
-    console.log(prices)
+    console.log(this.credits)
     if(this.credits < prices){
       alert('not enough')
     }
     if(treatKeys.includes(this.selection)){
-      // make return candy function 
+        this.status = 'Vending'
+        this.change = this.credits - prices
+        this.getTreat()
     }else{
       alert('make another choice')
+    }
+  }
+
+  getTreat(){
+    if(this.treats[this.selection].length > 0){
+      let singleSnack = this.treats[this.selection].shift()
+      return singleSnack
+    }else{
+      console.log('no snacks for you');
     }
   }
 
