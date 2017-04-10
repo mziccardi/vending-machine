@@ -6,16 +6,16 @@ const assert = require('chai').assert
 const VendingMachine = require('../vendingMachine').default
 const Person = require('../person').default
 
-describe('Elevator', function() {
+describe('vending-machine', function() {
   const vendingMachine = new VendingMachine()
-  const alex = new Person("Alex", 100)
+  const alex = new Person()
 
-  afterEach(function() {
-    vendingMachine.reset();
-  });
+  // afterEach(function() {
+  //   vendingMachine.reset();
+  // });
 
-  xit('should bring a rider to a floor above their current floor', () => {
-    // Assert the current status of the vendingMachine is idle
+  xit('remove credits from a persons wallet', () => {
+
     assert.equal(vendingMachine.status, 'idle')
 
     // Alex inserts a dollar into the vending machine
@@ -29,4 +29,15 @@ describe('Elevator', function() {
     assert.equal(vendingMachine.change, 0)
   });
 
+  it.only('should let a person make a selection',()=>{
+    const vendingMachine = new VendingMachine()
+    const alex = new Person()
+
+
+    vendingMachine.insertCredit(alex, 100)
+    vendingMachine.makeSelection('a1')
+
 });
+
+
+})
